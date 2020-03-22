@@ -85,7 +85,6 @@ namespace Lab04_TicTacToe.Classes
 				new[] {3,5,7}
 			};
 
-			// Given all the winning conditions, Determine the winning logic. 
 			for (int i = 0; i < winners.Length; i++)
 			{
 				Position p1 = Player.PositionForNumber(winners[i][0]);
@@ -96,8 +95,6 @@ namespace Lab04_TicTacToe.Classes
 				string b = Board.GameBoard[p2.Row, p2.Column];
 				string c = Board.GameBoard[p3.Row, p3.Column];
 
-				// TODO:  Determine a winner has been reached. 
-				// return true if a winner has been reached. 
 				if (a == b && b == c)
 				{
 					return true;
