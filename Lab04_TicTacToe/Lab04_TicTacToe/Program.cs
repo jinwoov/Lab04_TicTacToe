@@ -36,42 +36,51 @@ namespace Lab04_TicTacToe
         /// </summary>
         static bool PlayGame()
         {
-            Player playerOne = new Player();
-            Player playerTwo = new Player();
-
-            // creating a player name
-            Console.WriteLine("Player One, Whats your name?");
-            playerOne.Name = Console.ReadLine();
-            Console.WriteLine("Player Two, Whats your name?");
-            playerTwo.Name = Console.ReadLine();
-
-            // Instantiating Player to the board
-            Game game = new Game(playerOne, playerTwo);
-
-            Player winner = game.Play();
-
-            if (winner.Name == "Draw")
+            try
             {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("Close game, its a draw");
-                Console.ResetColor();
-            }
+                Player playerOne = new Player();
+                Player playerTwo = new Player();
 
-            else
+                // creating a player name
+                Console.WriteLine("Player One, Whats your name?");
+                playerOne.Name = Console.ReadLine();
+                Console.WriteLine("Player Two, Whats your name?");
+                playerTwo.Name = Console.ReadLine();
+
+                // Instantiating Player to the board
+                Game game = new Game(playerOne, playerTwo);
+
+                Player winner = game.Play();
+
+                if (winner.Name == "Draw")
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Close game, its a draw");
+                    Console.ResetColor();
+                }
+
+                else
+                {
+                    Console.Beep();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($"{winner.Name}, you are da winner");
+                    Console.ResetColor();
+                }
+
+                Console.WriteLine("Would you like to play again? (y)es/(n)o ?");
+                string userInput = Console.ReadLine();
+
+                if (userInput == "y" || userInput == "yes" || userInput == "Yes" || userInput == "Y")
+                    return false;
+                else
+                    return true;
+            }
+            catch (Exception)
             {
-                Console.Beep();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"{winner.Name}, you are da winner");
-                Console.ResetColor();
-            }
-
-            Console.WriteLine("Would you like to play again? (y)es/(n)o ?");
-            string userInput = Console.ReadLine();
-
-            if (userInput == "y" || userInput == "yes" || userInput == "Yes" || userInput == "Y")
+                Console.WriteLine("System Failure! System Failure! You Broke da system!!!!");
                 return false;
-            else
-                return true;
+            }
+           
         }
     }
 }
