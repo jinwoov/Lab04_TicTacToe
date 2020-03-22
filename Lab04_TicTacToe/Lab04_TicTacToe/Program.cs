@@ -8,13 +8,13 @@ namespace Lab04_TicTacToe
         static void Main(string[] args)
         {
             Console.WriteLine(@"
-                              TtttttttttttttttttT        TttttttttttttttttT        TttttttttttttttttT  
-                                       tt                        tt                        tt
-                                       tt  tt   tttt             tt   tt      tttt         tt    tt       tt
-                                       tt  tt tt                 tt  tt tt   tt            tt  tt  tt   tt  tt
-                                       tt  tt tt                 tt  ttttt   tt            tt  tt  tt   tttttt
-                                       TT  tt   tttt             TT  tt tt    tttt         TT    tt     tt
-                                                                                                         tttt");
+                    TtttttttttttttttttT        TttttttttttttttttT        TttttttttttttttttT  
+                            tt                        tt                        tt
+                            tt  tt   tttt             tt   tt      tttt         tt    tt       tt
+                            tt  tt tt                 tt  tt tt   tt            tt  tt  tt   tt  tt
+                            tt  tt tt                 tt  ttttt   tt            tt  tt  tt   tttttt
+                            TT  tt   tttt             TT  tt tt    tttt         TT    tt     tt
+                                                                                              tttt");
             Console.WriteLine("");
                                       
             PlayGame();
@@ -40,7 +40,9 @@ namespace Lab04_TicTacToe
             Player winner = game.Play();
 
             if (winner.Name == "Draw")
-            Console.WriteLine("This was a draw");
+            {
+                Console.WriteLine("This was a draw");
+            }
 
             else
             {

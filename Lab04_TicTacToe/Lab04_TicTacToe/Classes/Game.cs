@@ -62,7 +62,11 @@ namespace Lab04_TicTacToe.Classes
 				Console.Clear();
 				Board.DisplayBoard();
 				currentPlaya = NextPlayer();
-				currentPlaya.TakeTurn(Board);
+				bool checkUserChoice = false;
+				while (!checkUserChoice)
+				{
+				checkUserChoice = currentPlaya.TakeTurn(Board);
+				}
 				SwitchPlayer();
 				playGame = CheckForWinner(Board);
 				if (countTurn == 10)
