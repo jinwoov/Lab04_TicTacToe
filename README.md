@@ -59,7 +59,7 @@ Type in `dotnet run` and console will prompt you with options.
 ![Deposit Money](./assets/images/space-occupied.png)
 
 #### Winner Screem
-![Balance Check](./assets/images/winner-screen.png)
+![Balance Check](./assets/images/winner-screened.png)
 
 #### Application End
 ![Applicatino ends](./assets/images/application-end.png)
