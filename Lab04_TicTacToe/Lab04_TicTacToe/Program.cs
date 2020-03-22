@@ -7,7 +7,9 @@ namespace Lab04_TicTacToe
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(@"
+            try
+            {
+                Console.WriteLine(@"
                     TtttttttttttttttttT        TttttttttttttttttT        TttttttttttttttttT  
                             tt                        tt                        tt
                             tt  tt   tttt             tt   tt      tttt         tt    tt       tt
@@ -15,12 +17,17 @@ namespace Lab04_TicTacToe
                             tt  tt tt                 tt  ttttt   tt            tt  tt  tt   tttttt
                             TT  tt   tttt             TT  tt tt    tttt         TT    tt     tt
                                                                                               tttt");
-            Console.WriteLine("");
+                Console.WriteLine("");
 
-            bool startGame = false;
-            while(!startGame)
+                bool startGame = false;
+                while (!startGame)
+                {
+                    startGame = PlayGame();
+                }
+            }
+            finally
             {
-            startGame = PlayGame();
+                Console.WriteLine("Mahalo for playing, until next time~");
             }
         }
 
@@ -45,12 +52,17 @@ namespace Lab04_TicTacToe
 
             if (winner.Name == "Draw")
             {
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Close game, its a draw");
+                Console.ResetColor();
             }
 
             else
             {
+                Console.Beep();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"{winner.Name}, you are da winner");
+                Console.ResetColor();
             }
 
             Console.WriteLine("Would you like to play again? (y)es/(n)o ?");
@@ -60,7 +72,6 @@ namespace Lab04_TicTacToe
                 return false;
             else
                 return true;
-                     
         }
     }
 }
