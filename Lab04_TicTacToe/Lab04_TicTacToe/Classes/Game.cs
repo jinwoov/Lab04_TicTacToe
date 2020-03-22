@@ -57,6 +57,7 @@ namespace Lab04_TicTacToe.Classes
 					currentPlaya.Name = "Draw";
 				}
 			}
+			Console.Clear();
 			Board.DisplayBoard();
 			Winner = currentPlaya;
 			return Winner;
