@@ -75,7 +75,5 @@ namespace TestForTicTacToe
 
             Assert.Equal("3", board.GameBoard[position.Row, position.Column]); 
         }
-
-
     }
 }

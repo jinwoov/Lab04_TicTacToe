@@ -5,6 +5,10 @@ namespace Lab04_TicTacToe
 {
     public class Program
     {
+        /// <summary>
+        /// This is for main function that is run when application start
+        /// </summary>
+        /// <param name="args">no argument given</param>
         static void Main(string[] args)
         {
             try
@@ -32,7 +36,7 @@ namespace Lab04_TicTacToe
         }
 
         /// <summary>
-        /// Starts the game when the application is ran
+        /// Starts the game and interface for users to enter the name.
         /// </summary>
         static bool PlayGame()
         {

@@ -5,7 +5,10 @@ using System.Text;
 namespace Lab04_TicTacToe.Classes
 {
     public class Player
-    {
+    {	
+		/// <summary>
+		/// Each players name
+		/// </summary>
 		public string Name { get; set; }
 		/// <summary>
 		/// P1 is X and P2 will be O
@@ -31,7 +34,11 @@ namespace Lab04_TicTacToe.Classes
 
 		}
 
-
+		/// <summary>
+		/// Check which case the user input is and returns the row and column that will be used as array index
+		/// </summary>
+		/// <param name="position">User input of which tic tac toe position they chose</param>
+		/// <returns>Array indexes</returns>
 		public static Position PositionForNumber(int position)
 		{
 			switch (position)
@@ -50,7 +57,11 @@ namespace Lab04_TicTacToe.Classes
 			}
 		}
 
-	
+		/// <summary>
+		/// Returns if user have chose that position already, marker will be marked on chosen spot
+		/// </summary>
+		/// <param name="board">Game board</param>
+		/// <returns>return if the spot is already marked</returns>
 		public bool TakeTurn(Board board)
 		{
 			IsTurn = true;
