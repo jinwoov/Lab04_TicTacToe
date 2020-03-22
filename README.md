@@ -62,7 +62,7 @@ Type in `dotnet run` and console will prompt you with options.
 ![Balance Check](./assets/images/winner-screened.png)
 
 #### Application End
-![Applicatino ends](./assets/images/application-end.png)
+![Applicatino ends](./assets/images/application-done.png)
 
 ---
 
