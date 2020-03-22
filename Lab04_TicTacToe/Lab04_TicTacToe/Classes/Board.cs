@@ -16,7 +16,9 @@ namespace Lab04_TicTacToe.Classes
 			{"7", "8", "9"},
 		};
 
-
+		/// <summary>
+		/// Displays Board when its called in Play() function 
+		/// </summary>
 		public void DisplayBoard()
 		{
 			for (int i = 0; i <= 2; i++)

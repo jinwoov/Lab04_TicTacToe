@@ -16,13 +16,18 @@ namespace Lab04_TicTacToe
                             TT  tt   tttt             TT  tt tt    tttt         TT    tt     tt
                                                                                               tttt");
             Console.WriteLine("");
-                                      
-            PlayGame();
+
+            bool startGame = false;
+            while(!startGame)
+            {
+            startGame = PlayGame();
+            }
         }
 
-        // TODO: Setup your game. Create a new method that creates your players and instantiates the game class. Call that method in your Main method.
-        // You are requesting a Winner to be returned, Determine who the winner is output the celebratory message to the correct player. If it's a draw, tell them that there is no winner. 
-        static void PlayGame()
+        /// <summary>
+        /// Starts the game when the application is ran
+        /// </summary>
+        static bool PlayGame()
         {
             Player playerOne = new Player();
             Player playerTwo = new Player();
@@ -36,19 +41,26 @@ namespace Lab04_TicTacToe
             // Instantiating Player to the board
             Game game = new Game(playerOne, playerTwo);
 
-            //Console.WriteLine(game.Play()); 
             Player winner = game.Play();
 
             if (winner.Name == "Draw")
             {
-                Console.WriteLine("This was a draw");
+                Console.WriteLine("Close game, its a draw");
             }
 
             else
             {
-                Console.WriteLine($"{winner.Name}, you were a winner");
+                Console.WriteLine($"{winner.Name}, you are da winner");
             }
 
+            Console.WriteLine("Would you like to play again? (y)es/(n)o ?");
+            string userInput = Console.ReadLine();
+
+            if (userInput == "y" || userInput == "yes" || userInput == "Yes" || userInput == "Y")
+                return false;
+            else
+                return true;
+                     
         }
     }
 }
