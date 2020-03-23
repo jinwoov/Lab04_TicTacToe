@@ -12,9 +12,9 @@ namespace TestForTicTacToe
         {
             Player playerOne = new Player();
 
-            playerOne.Name = "Mario";
+            playerOne.Name = "Michael Scott";
 
-            Assert.Equal("Mario", playerOne.Name);
+            Assert.Equal("Michael Scott", playerOne.Name);
         }
 
         [Fact]
@@ -73,7 +73,24 @@ namespace TestForTicTacToe
 
             Board board = new Board();
 
-            Assert.Equal("3", board.GameBoard[position.Row, position.Column]); 
+            Assert.Equal("3", board.GameBoard[position.Row, position.Column]);
+        }
+
+        [Fact]
+        public void CheckItsYourTurn()
+        {
+            Player playerOne = new Player();
+            playerOne.Name = "Michael Scott";
+            playerOne.IsTurn = true; 
+            Player playerTwo = new Player();
+            playerTwo.Name = "Dwight Schrute";
+            playerTwo.IsTurn = false;
+
+            Game game = new Game(playerOne, playerTwo);
+
+            Player curentPlaya = game.NextPlayer();
+
+            Assert.Equal("Michael Scott", curentPlaya.Name);
         }
     }
 }
